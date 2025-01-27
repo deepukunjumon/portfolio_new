@@ -320,7 +320,7 @@ body.dark-mode .theme-toggle label {
     }
 
     .nav-links.active {
-        top: 60px;
+        top: 0px;
         /* Match navbar height */
         visibility: visible;
         opacity: 1;
@@ -476,7 +476,7 @@ body.dark-mode .theme-toggle label {
     }
 
     .nav-links {
-        gap: 1rem;
+        gap: 0.5rem;
     }
 
     .progress-bar {
