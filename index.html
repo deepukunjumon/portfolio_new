@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepu - Backend Developer</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#qualifications" class="nav-link">Qualifications</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <div class="theme-toggle">
+                    <input type="checkbox" id="theme-toggle">
+                    <label for="theme-toggle">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </label>
+                </div>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="nav-overlay"></div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-image">
+                <img src="assets/img/pro-pic1.webp" alt="Deepu">
+            </div>
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Deepu</span></h1>
+                <p class="role">Backend developer</p>
+                <p class="description">High-level experience in web design and development knowledge, producing quality
+                    work.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn primary">Contact</a>
+                    <a href="https://drive.google.com/file/d/1XrY1-MhCeQDMIPIgOFaZmX0TJg9eRKxF/view?usp=drive_link"
+                        class="btn secondary" target="_blank" rel="noopener noreferrer">Resume</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/" target="_blank" class="social-link"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/deepukunjumon" target="_blank" class="social-link"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://wa.me/+918086952858" target="_blank" class="social-link"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="social-link"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="qualifications" class="qualifications">
+            <h2>My Qualifications</h2>
+            <div class="qualification-tabs">
+                <div class="qualification-button button-active" data-target="#education">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </div>
+                <div class="qualification-button" data-target="#experience">
+                    <i class="fas fa-briefcase"></i> Experience
+                </div>
+            </div>
+
+            <div class="qualification-sections">
+                <div class="qualification-content qualification-active" data-content id="education">
+                    <div class="qualification-data">
+                        <div class="left">
+                            <h3>Master of Computer Applications</h3>
+                            <span class="qualification-subtitle">Kerala Technological University (KTU)</span>
+                            <div class="calendar">
+                                <i class="fas fa-calendar-alt"></i> 2021 - 2023
+                            </div>
+                            <p>CGPA: 7.81</p>
+                        </div>
+                        <div class="center">
+                            <span class="dot"></span>
+                            <span class="line"></span>
+                        </div>
+                        <div></div>
+                    </div>
+
+                    <div class="qualification-data">
+                        <div></div>
+                        <div class="center">
+                            <span class="dot"></span>
+                            <span class="line"></span>
+                        </div>
+                        <div class="right">
+                            <h3>Bachelor of Computer Applications</h3>
+                            <span class="qualification-subtitle">Mahatma Gandhi University (MGU)</span>
+                            <div class="calendar">
+                                <i class="fas fa-calendar-alt"></i> 2017 - 2020
+                            </div>
+                            <p>CCPA: 5.73</p>
+                        </div>
+                    </div>
+
+                    <!-- Add other education entries -->
+                </div>
+
+                <div class="qualification-content" data-content id="experience">
+                    <div class="qualification-data">
+                        <div class="left">
+                            <h3>PHP Developer</h3>
+                            <span class="qualification-subtitle">Acumen Capital Market India Ltd.</span>
+                            <div class="calendar">
+                                <i class="fas fa-calendar-alt"></i> Nov 2023 - Present
+                            </div>
+                        </div>
+                        <div class="center">
+                            <span class="dot"></span>
+                            <span class="line"></span>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="skills-wrapper">
+                <h2>My Skills</h2>
+                <div class="skills-content-wrapper">
+                    <div class="skills-content">
+                        <div class="skills-container">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">PHP</span>
+                                    <span class="skill-percentage">82%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" data-progress="82%">
+                                        <div class="progress-circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">MySQL</span>
+                                    <span class="skill-percentage">79%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" data-progress="79%">
+                                        <div class="progress-circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" data-progress="85%">
+                                        <div class="progress-circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percentage">79%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" data-progress="79%">
+                                        <div class="progress-circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Laravel</span>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" data-progress="70%">
+                                        <div class="progress-circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-image">
+                        <img src="assets/img/dev-coding.gif" alt="Skills illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="projects-scroll">
+                    <div class="project">
+                        <img src="assets/img/traffic-sign-recognition.webp" alt="Project 1">
+                        <div class="project-overlay">
+                            <h3>Traffic Sign Recognition System</h3>
+                            <p>Description of Project 1</p>
+                            <a href="#" class="btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="assets/img/course-selection-system.webp" alt="Project 1">
+                        <div class="project-overlay">
+                            <h3>Course Selection System</h3>
+                            <p>Description of Project 1</p>
+                            <a href="#" class="btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="assets/img/library-management-system.webp" alt="Project 3">
+                        <div class="project-overlay">
+                            <h3>Library Management System</h3>
+                            <p>Description of Project 3</p>
+                            <a href="#" class="btn">View Project</a>
+                        </div>
+                    </div>
+                    <!-- Add more project cards as needed -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-image">
+                    <img src="assets/img/contact.png" alt="Contact illustration">
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST"
+                        onsubmit="return handleFormSubmit(this);">
+                        <div class="form-group">
+                            <input type="hidden" name="access_key" value="1e065638-c704-40a1-9869-3d36d68c838e">
+                            <input type="hidden" name="subject" value="New Contact Form Submission">
+                            <input type="hidden" name="from_name" value="Portfolio Website">
+
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Deepu Kunjumon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
