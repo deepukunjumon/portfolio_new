@@ -345,19 +345,9 @@ body.dark-mode .theme-toggle label {
         visibility: visible;
     }
 
-    /* Menu toggle animation */
-    .menu-toggle.active span:first-child {
-        transform: rotate(45deg);
-        top: 8px;
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active span:last-child {
-        transform: rotate(-45deg);
-        top: 8px;
+    /* Prevent scrolling when menu is open */
+    body.menu-open {
+        overflow: hidden;
     }
 
     /* Navigation links styles */
@@ -378,11 +368,6 @@ body.dark-mode .theme-toggle label {
     /* Theme toggle in mobile menu */
     .theme-toggle {
         margin: 0.5rem 0;
-    }
-
-    /* Prevent scrolling when menu is open */
-    body.menu-open {
-        overflow: hidden;
     }
 
     /* Hero section mobile adjustments */
@@ -470,6 +455,10 @@ body.dark-mode .theme-toggle label {
 }
 
 @media screen and (max-width: 480px) {
+    .navbar {
+        padding: 1rem 0.7rem;
+    }
+
     .nav-container {
         padding: 0 1rem;
     }
@@ -1457,7 +1446,7 @@ body.dark-mode .calendar {
 
 @media screen and (max-width: 480px) {
     .hero {
-        padding-top: 70px;
+        padding-top: 7.5rem;
         /* Adjusted for smaller screens */
     }
 
@@ -1583,8 +1572,12 @@ html {
 }
 
 @media screen and (max-width: 480px) {
+    a.social-link {
+        animation: slideInLeft 0.5s ease forwards;
+    }
+
     .hero h1 {
-        font-size: 36px;
+        font-size: 2rem;
     }
 
     .typed-text {
@@ -1957,6 +1950,14 @@ h6 {
 
     .contact {
         padding: 4rem 0;
+    }
+
+    footer {
+        padding: 0.5rem 0;
+    }
+
+    .footer-bottom {
+        font-size: 0.5rem;
     }
 }
 
