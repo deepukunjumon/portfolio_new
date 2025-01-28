@@ -1414,13 +1414,14 @@ body.dark-mode .calendar {
     }
 
     .hero-image {
+        margin-top: 5rem;
         width: 100%;
         margin-bottom: 2rem;
     }
 
     .hero-image img {
-        width: 160px;
-        height: 160px;
+        width: 20rem;
+        height: 20rem;
     }
 
     .hero-content {
@@ -1440,13 +1441,13 @@ body.dark-mode .calendar {
     }
 
     .social-links {
-        justify-content: center;
+        display: none;
     }
 }
 
 @media screen and (max-width: 480px) {
     .hero {
-        padding-top: 7.5rem;
+        margin-top: -4.5rem;
         /* Adjusted for smaller screens */
     }
 
