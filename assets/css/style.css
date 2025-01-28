@@ -494,15 +494,19 @@ body.dark-mode .theme-toggle label {
 
 /* General Section Styles */
 section {
-    padding: 2.5rem 0;
+    padding: 5rem 0 2.5rem;
+    /* Increased top padding */
     margin: 0;
+    scroll-margin-top: 60px;
+    /* Add scroll margin to account for navbar */
 }
 
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    padding: 100px 5% 2rem;
-    margin-bottom: 0;
+    padding: 80px 5% 2rem;
+    /* Adjusted top padding */
+    margin-top: 0;
     display: flex;
     align-items: center;
     gap: 4rem;
@@ -625,7 +629,8 @@ section {
 
 /* Skills Section */
 .skills {
-    padding: 3rem 0;
+    padding: 1.5rem 0 2.5rem;
+    /* Consistent padding */
     margin-bottom: 0;
     background-color: var(--section-bg);
 }
@@ -847,7 +852,8 @@ body.dark-mode .progress-circle {
 
 /* Projects Section */
 .projects {
-    padding: 3rem 2rem;
+    padding: 5rem 2rem 2.5rem;
+    /* Consistent padding */
     margin-bottom: 0;
     text-align: center;
 }
@@ -971,7 +977,8 @@ body.dark-mode .projects-scroll::-webkit-scrollbar-thumb {
 
 /* Contact Section */
 .contact {
-    padding: 3rem 0;
+    padding: 1.5rem 0 2.5rem;
+    /* Consistent padding */
     margin-bottom: 0;
     background-color: var(--section-bg);
 }
@@ -1200,7 +1207,8 @@ body.dark-mode .form-group textarea:focus {
 
 /* Qualifications Section */
 .qualifications {
-    padding: 3rem 0;
+    padding: 1.5rem 0 2.5rem;
+    /* Consistent padding */
     margin-bottom: 0;
 }
 
@@ -1408,7 +1416,8 @@ body.dark-mode .calendar {
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        padding: 100px 20px 60px;
+        padding: 80px 20px 2rem;
+        /* Adjusted padding */
         gap: 3rem;
     }
 
@@ -1445,7 +1454,8 @@ body.dark-mode .calendar {
 
 @media screen and (max-width: 480px) {
     .hero {
-        padding-top: 3.5rem;
+        padding-top: 70px;
+        /* Adjusted for smaller screens */
     }
 
     .hero-image img {
@@ -1875,7 +1885,8 @@ h6 {
 /* Projects Section Mobile Adjustments */
 @media screen and (max-width: 768px) {
     .projects {
-        padding: 3rem 1rem;
+        padding: 4rem 1rem 2rem;
+        /* Adjusted padding */
     }
 
     .projects-container {
