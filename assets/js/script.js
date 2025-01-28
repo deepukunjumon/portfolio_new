@@ -9,6 +9,61 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const leftElements = document.querySelectorAll('.left');
+  const rightElements = document.querySelectorAll('.right');
+  const qualificationButtons = document.querySelectorAll('.qualification-button');
+  const qualificationContents = document.querySelectorAll('.qualification-content');
+
+  function checkVisibility() {
+    const windowHeight = window.innerHeight;
+
+    leftElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        el.classList.add('animate');
+      }
+    });
+
+    rightElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        el.classList.add('animate');
+      }
+    });
+  }
+
+  // Function to handle tab switching
+  qualificationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const target = button.getAttribute('data-target');
+
+      // Remove active class from all buttons and hide all contents
+      qualificationButtons.forEach(btn => btn.classList.remove('button-active'));
+      qualificationContents.forEach(content => {
+        content.classList.remove('qualification-active');
+        content.querySelectorAll('.left, .right').forEach(el => {
+          el.classList.remove('animate'); // Remove animation class
+        });
+      });
+
+      // Add active class to the clicked button and show the target content
+      button.classList.add('button-active');
+      const activeContent = document.querySelector(target);
+      activeContent.classList.add('qualification-active');
+
+      // Re-add animation classes to the elements in the active content
+      activeContent.querySelectorAll('.left, .right').forEach(el => {
+        el.classList.add('animate'); // Add animation class
+      });
+    });
+  });
+
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('resize', checkVisibility);
+  checkVisibility(); // Initial check
+});
+
 // Form validation
 const form = document.getElementById("contact-form");
 const nameInput = document.getElementById("name");
