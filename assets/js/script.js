@@ -10,57 +10,63 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const leftElements = document.querySelectorAll('.left');
-  const rightElements = document.querySelectorAll('.right');
-  const qualificationButtons = document.querySelectorAll('.qualification-button');
-  const qualificationContents = document.querySelectorAll('.qualification-content');
+  const leftElements = document.querySelectorAll(".left");
+  const rightElements = document.querySelectorAll(".right");
+  const qualificationButtons = document.querySelectorAll(
+    ".qualification-button"
+  );
+  const qualificationContents = document.querySelectorAll(
+    ".qualification-content"
+  );
 
   function checkVisibility() {
     const windowHeight = window.innerHeight;
 
-    leftElements.forEach(el => {
+    leftElements.forEach((el) => {
       const rect = el.getBoundingClientRect();
       if (rect.top < windowHeight && rect.bottom > 0) {
-        el.classList.add('animate');
+        el.classList.add("animate");
       }
     });
 
-    rightElements.forEach(el => {
+    rightElements.forEach((el) => {
       const rect = el.getBoundingClientRect();
       if (rect.top < windowHeight && rect.bottom > 0) {
-        el.classList.add('animate');
+        el.classList.add("animate");
       }
     });
   }
 
   // Function to handle tab switching
-  qualificationButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const target = button.getAttribute('data-target');
+  qualificationButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = button.getAttribute("data-target");
 
       // Remove active class from all buttons and hide all contents
-      qualificationButtons.forEach(btn => btn.classList.remove('button-active'));
-      qualificationContents.forEach(content => {
-        content.classList.remove('qualification-active');
-        content.querySelectorAll('.left, .right').forEach(el => {
-          el.classList.remove('animate'); // Remove animation class
+      qualificationButtons.forEach((btn) =>
+        btn.classList.remove("button-active")
+      );
+      qualificationContents.forEach((content) => {
+        content.classList.remove("qualification-active");
+        content.querySelectorAll(".left, .right").forEach((el) => {
+          el.classList.remove("animate"); // Remove animation class
         });
       });
 
       // Add active class to the clicked button and show the target content
-      button.classList.add('button-active');
+      button.classList.add("button-active");
       const activeContent = document.querySelector(target);
-      activeContent.classList.add('qualification-active');
+      activeContent.classList.add("qualification-active");
 
       // Re-add animation classes to the elements in the active content
-      activeContent.querySelectorAll('.left, .right').forEach(el => {
-        el.classList.add('animate'); // Add animation class
+      activeContent.querySelectorAll(".left, .right").forEach((el) => {
+        el.classList.add("animate"); // Add animation class
       });
     });
   });
 
-  window.addEventListener('scroll', checkVisibility);
-  window.addEventListener('resize', checkVisibility);
+  window.addEventListener("scroll", checkVisibility);
+  window.addEventListener("resize", checkVisibility);
   checkVisibility(); // Initial check
 });
 
@@ -178,26 +184,26 @@ const observer = new IntersectionObserver(
 
 observer.observe(skillsSection);
 
-// Add fade-in animation to sections on scroll
+// Revealing animations on scroll
 const sections = document.querySelectorAll("section");
 
-const fadeInObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  },
-  { threshold: 0.3 }
-);
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
 
-sections.forEach((section) => {
-  section.style.opacity = "0";
-  section.style.transform = "translateY(20px)";
-  section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  fadeInObserver.observe(section);
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.add("animate-in");
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+sections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden");
 });
 
 // Qualification Tabs
