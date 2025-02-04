@@ -1632,7 +1632,6 @@ body.dark-mode .theme-toggle label {
 
 /* Section Headings */
 section h2 {
-    font-size: 2rem;
     margin-bottom: 40px;
     text-align: center;
     color: var(--text-color);
@@ -1656,17 +1655,10 @@ section h2::after {
 .about h2,
 .contact h2,
 .qualifications h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 
-/* Mobile adjustments */
-@media screen and (max-width: 768px) {
-    section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 25px;
-    }
-}
 
 /* Dark mode for about section */
 body.dark-mode .about {
