@@ -1032,9 +1032,9 @@ body.dark-mode .projects-scroll::-webkit-scrollbar-thumb {
     height: auto;
 }
 
-.contact-image img:hover {
-    transform: scale(1.2);
-}
+/* .contact-image img:hover {
+    transform: scale(1);
+} */
 
 .contact-form {
     flex: 0.9;
