@@ -5,26 +5,30 @@ const projectData = [
   {
     title: 'Bakeshop Management System',
     image: '/assets/img/cafe.webp',
-    desc: 'A custom software built using Laravel, react and material UI frontend which manages the activities in a bakeshop',
+    desc: 'An end-to-end management solution for commercial bakeshops, featuring real-time inventory tracking and order management.',
+    tags: ['Laravel', 'React', 'Material UI'],
     code: 'https://github.com/deepukunjumon/townbakers',
     demo: 'https://townbakers.vercel.app',
   },
   {
-    title: 'Traffic Sign Recognition System',
+    title: 'Traffic Sign Recognition',
     image: '/assets/img/traffic-sign-recognition.webp',
-    desc: 'This Python-based machine learning project leverages computer vision techniques to detect and recognize traffic signboards in real-time. Using pre-trained models, it accurately identifies various traffic signs and provides voice output, helping to enhance driver assistance systems or automated vehicles.',
+    desc: 'Real-time computer vision system using Python and deep learning to identify traffic signs with integrated voice alerts.',
+    tags: ['Python', 'Machine Learning', 'OpenCV'],
     code: 'https://github.com/deepukunjumon/Real-Time-Traffic-Sign-Recognition-with-Voice-Alert',
   },
   {
     title: 'Course Selection System',
     image: '/assets/img/course-selection-system.webp',
-    desc: 'A web-based system that allows students to select courses for their program. It helps students view available courses and check prerequisites. Administrators can manage courses and track student selections easily.',
+    desc: 'A comprehensive web platform for students to navigate course prerequisites and manage academic enrollments.',
+    tags: ['PHP', 'MySQL', 'JavaScript'],
     code: 'https://github.com/deepukunjumon/',
   },
   {
     title: 'Library Management System',
     image: '/assets/img/library-management-system.webp',
-    desc: 'A simple web application built using php, to manage the activiteies in a library.',
+    desc: 'Automated digital cataloging and transaction system for libraries with efficient record keeping.',
+    tags: ['PHP', 'HTML/CSS', 'MySQL'],
     code: 'https://github.com/deepukunjumon/Library_Management',
   }
 ];
@@ -32,37 +36,51 @@ const projectData = [
 const Projects = () => {
   return (
     <section id="projects" className="projects">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
+      <motion.div 
+        className="projects-header"
+        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        Projects
-      </motion.h2>
-      <div className="projects-container">
-        <div className="projects-scroll">
-          {projectData.map((project, idx) => (
-            <motion.div 
-              className="project" 
-              key={idx}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-            >
+        <h2>Featured Projects</h2>
+      </motion.div>
+
+      <div className="projects-grid">
+        {projectData.map((project, idx) => (
+          <motion.div 
+            className="project-card" 
+            key={idx}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+          >
+            <div className="project-image-container">
               <img src={project.image} alt={project.title} loading="lazy" />
-              <div className="project-info">{project.title}</div>
-              <div className="project-overlay">
-                <h3>{project.title}</h3>
-                <p>{project.desc}</p>
-                <a href={project.code} target="_blank" rel="noreferrer" className="btn">Source Code</a>
+              <div className="project-card-overlay">
+                <a href={project.code} target="_blank" rel="noreferrer" className="overlay-link"><i className="fab fa-github"></i> Source</a>
                 {project.demo && (
-                  <a href={project.demo} target="_blank" rel="noreferrer" className="btn btn-success">Demo</a>
+                  <a href={project.demo} target="_blank" rel="noreferrer" className="overlay-link"><i className="fas fa-external-link-alt"></i> Demo</a>
                 )}
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+            
+            <div className="project-card-content">
+              <div className="project-tags">
+                {project.tags.map((tag, i) => (
+                  <span key={i} className="tag">{tag}</span>
+                ))}
+              </div>
+              <h3 className="project-card-title">{project.title}</h3>
+              <p className="project-card-desc">{project.desc}</p>
+              <div className="project-card-footer">
+                <a href={project.code} target="_blank" rel="noreferrer" className="project-cta">
+                  Explore Project <i className="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
