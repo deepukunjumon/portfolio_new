@@ -68,67 +68,109 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
+      <motion.div 
+        className="contact-header"
+        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        Contact Me
-      </motion.h2>
+        <h2>Get In Touch</h2>
+        <p className="section-subtitle">Interested in collaborating or have a question? Feel free to reach out!</p>
+      </motion.div>
+
       <div className="contact-container">
         <motion.div 
-          className="contact-image"
-          initial={{ opacity: 0, x: -50 }}
+          className="contact-info"
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <img src="/assets/img/contact.png" alt="Contact illustration" loading="lazy" />
+          <div className="info-card">
+            <div className="info-icon">
+              <i className="fas fa-envelope"></i>
+            </div>
+            <div className="info-details">
+              <h3>Email</h3>
+              <p>deepukunjumon@gmail.com</p>
+              <a href="mailto:deepukunjumon@gmail.com" className="info-link">Send a message &rarr;</a>
+            </div>
+          </div>
+
+          <div className="info-card">
+            <div className="info-icon">
+              <i className="fas fa-phone-alt"></i>
+            </div>
+            <div className="info-details">
+              <h3>Phone</h3>
+              <p>+91 8086952858</p>
+              <a href="tel:+918086952858" className="info-link">Call me &rarr;</a>
+            </div>
+          </div>
+
+          <div className="info-card">
+            <div className="info-icon">
+              <i className="fas fa-map-marker-alt"></i>
+            </div>
+            <div className="info-details">
+              <h3>Location</h3>
+              <p>Kerala, India</p>
+              <span className="info-text">Available for remote work</span>
+            </div>
+          </div>
         </motion.div>
+
         <motion.div 
-          className="contact-form"
-          initial={{ opacity: 0, x: 50 }}
+          className="contact-form-wrapper"
+          initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <form id="contact-form" onSubmit={handleSubmit} noValidate>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                value={formData.name}
-                onChange={handleChange}
-                className={errors.name ? 'error' : ''}
-              />
-              {errors.name && <div className="error-message">{errors.name}</div>}
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="name">Full Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={errors.name ? 'error' : ''}
+                />
+                {errors.name && <div className="error-message">{errors.name}</div>}
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email Address</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={errors.email ? 'error' : ''}
+                />
+                {errors.email && <div className="error-message">{errors.email}</div>}
+              </div>
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                value={formData.email}
-                onChange={handleChange}
-                className={errors.email ? 'error' : ''}
-              />
-              {errors.email && <div className="error-message">{errors.email}</div>}
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">Your Message</label>
               <textarea 
                 id="message" 
                 name="message" 
+                placeholder="How can I help you?"
                 value={formData.message}
                 onChange={handleChange}
                 className={errors.message ? 'error' : ''}
               ></textarea>
               {errors.message && <div className="error-message">{errors.message}</div>}
             </div>
-            <button type="submit" className="btn">Send Message</button>
+            <button type="submit" className="submit-btn">
+              Send Message <i className="fas fa-paper-plane"></i>
+            </button>
           </form>
         </motion.div>
       </div>
