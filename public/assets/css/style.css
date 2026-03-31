@@ -5,12 +5,12 @@
     --background-color: #F9FAFB;
     --text-color: #333;
     --light-text: #6B7280;
-    --dark-bg: #111827;
+    --dark-bg: #020407;
     --dark-secondary: #1F2937;
     --bg-color: #fff;
     --secondary-text: #666;
     --section-bg: #F8F9FA;
-    --font-primary: 'Poppins', sans-serif;
+    --font-primary: 'Lato', sans-serif;
 }
 
 /* General Styles */
@@ -29,7 +29,7 @@ html {
     font-family: var(--font-primary);
     color: var(--text-color);
     background-color: var(--bg-color);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -47,6 +47,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav {
@@ -134,6 +135,7 @@ nav ul li a:hover {
     min-height: 60px;
     display: flex;
     align-items: center;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .nav-container {
@@ -147,6 +149,7 @@ nav ul li a:hover {
 .nav-links {
     display: flex;
     gap: 2.5rem;
+    transition: background 0.3s ease;
 }
 
 .nav-link {
@@ -223,7 +226,7 @@ body.dark-mode {
 }
 
 body.dark-mode .navbar {
-    background: rgba(17, 24, 39, 0.95);
+    background: var(--dark-bg);
 }
 
 body.dark-mode .nav-links {
@@ -407,7 +410,6 @@ body.dark-mode .theme-toggle label {
 
     .hero-image img {
         width: 160px;
-        /* Reduced from 180px */
         height: 160px;
         margin: 0 auto;
     }
@@ -433,7 +435,6 @@ body.dark-mode .theme-toggle label {
         justify-content: center;
         gap: 1rem;
         margin-bottom: 1.5rem;
-        /* Reduced from 2rem */
     }
 
     .btn {
@@ -444,11 +445,6 @@ body.dark-mode .theme-toggle label {
     .btn-success {
         background-color: green !important;
         color: white;
-    }
-
-    .social-links {
-        justify-content: center;
-        gap: 1rem;
     }
 
     .social-link {
@@ -614,23 +610,40 @@ section {
 }
 
 .social-link {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 195, 154, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-color);
     text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 1.1rem;
+    backdrop-filter: blur(5px);
 }
 
 .social-link:hover {
     background-color: var(--primary-color);
+    border-color: var(--primary-color);
     color: white;
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 195, 154, 0.3);
+}
+
+/* Dark mode specific adjustments for social links */
+body.dark-mode .social-link {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .social-link:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
 }
 
 /* Skills Section */
@@ -734,7 +747,7 @@ section {
 .progress {
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, #00C39A 0%, #4F46E5 100%);
+    background: var(--primary-color);
     border-radius: 10px;
     position: relative;
     transition: width 2s cubic-bezier(0.1, 0.5, 0.2, 1);
@@ -1573,7 +1586,7 @@ html {
     color: var(--text-color);
     font-size: 24px;
     margin: 0 10px;
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
 }
 
 .social-links a:hover {
@@ -1603,6 +1616,10 @@ html {
         min-height: 28px;
         /* Adjust for smaller font size */
     }
+
+    .social-links a {
+        margin: 0;
+    }
 }
 
 /* Dark Mode Styles */
@@ -1615,7 +1632,7 @@ body.dark-mode {
 }
 
 body.dark-mode .navbar {
-    background: rgba(17, 24, 39, 0.95);
+    background: var(--dark-bg);
 }
 
 body.dark-mode .nav-links {
