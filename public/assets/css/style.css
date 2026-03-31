@@ -229,10 +229,6 @@ body.dark-mode .navbar {
     background: var(--dark-bg);
 }
 
-body.dark-mode .nav-links {
-    background: var(--dark-bg);
-}
-
 body.dark-mode .nav-link {
     color: #fff;
 }
@@ -1069,7 +1065,7 @@ body.dark-mode .section-subtitle {
     .projects {
         padding: 4rem 1rem;
     }
-    
+
     .projects-header h2 {
         font-size: 2rem;
     }
@@ -1760,10 +1756,6 @@ body.dark-mode {
 }
 
 body.dark-mode .navbar {
-    background: var(--dark-bg);
-}
-
-body.dark-mode .nav-links {
     background: var(--dark-bg);
 }
 
