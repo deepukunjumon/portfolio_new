@@ -74,8 +74,7 @@ const Contact = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2>Get In Touch</h2>
-        <p className="section-subtitle">Interested in collaborating or have a question? Feel free to reach out!</p>
+        <h2>Connect With Me</h2>
       </motion.div>
 
       <div className="contact-container">
@@ -86,42 +85,42 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="info-card">
+          <div className="info-item">
             <div className="info-icon">
               <i className="fas fa-envelope"></i>
             </div>
-            <div className="info-details">
+            <div className="info-text">
               <h3>Email</h3>
               <p>deepukunjumon1@gmail.com</p>
-              <a href="mailto:deepukunjumon1@gmail.com" className="info-link">Send a message &rarr;</a>
+              <a href="mailto:deepukunjumon1@gmail.com" className="minimal-link">Contact me &rarr;</a>
             </div>
           </div>
 
-          <div className="info-card">
+          <div className="info-item">
             <div className="info-icon">
               <i className="fas fa-phone-alt"></i>
             </div>
-            <div className="info-details">
+            <div className="info-text">
               <h3>Phone</h3>
               <p>+91 8086952858</p>
-              <a href="tel:+918086952858" className="info-link">Call me &rarr;</a>
+              <a href="tel:+918086952858" className="minimal-link">Give me a call &rarr;</a>
             </div>
           </div>
 
-          <div className="info-card">
+          <div className="info-item">
             <div className="info-icon">
               <i className="fas fa-map-marker-alt"></i>
             </div>
-            <div className="info-details">
+            <div className="info-text">
               <h3>Location</h3>
               <p>Kerala, India</p>
-              <span className="info-text">Available for remote work</span>
+              <span className="info-status">Remote Available</span>
             </div>
           </div>
         </motion.div>
 
         <motion.div 
-          className="contact-form-wrapper"
+          className="contact-form-container"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -135,7 +134,7 @@ const Contact = () => {
                   type="text" 
                   id="name" 
                   name="name" 
-                  placeholder="Your Name"
+                  placeholder="Deepu Kunjumon"
                   value={formData.name}
                   onChange={handleChange}
                   className={errors.name ? 'error' : ''}
@@ -148,7 +147,7 @@ const Contact = () => {
                   type="email" 
                   id="email" 
                   name="email" 
-                  placeholder="Email Address"
+                  placeholder="your@email.com"
                   value={formData.email}
                   onChange={handleChange}
                   className={errors.email ? 'error' : ''}
@@ -157,19 +156,19 @@ const Contact = () => {
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor="message">Your Message</label>
+              <label htmlFor="message">Your message</label>
               <textarea 
                 id="message" 
                 name="message" 
-                placeholder="How can I help you?"
+                placeholder="Hi, I'd like to talk about..."
                 value={formData.message}
                 onChange={handleChange}
                 className={errors.message ? 'error' : ''}
               ></textarea>
               {errors.message && <div className="error-message">{errors.message}</div>}
             </div>
-            <button type="submit" className="submit-btn">
-              Send Message <i className="fas fa-paper-plane"></i>
+            <button type="submit" className="minimal-btn">
+              Send Message <i className="fas fa-arrow-right"></i>
             </button>
           </form>
         </motion.div>
