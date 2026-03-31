@@ -45,7 +45,9 @@ const Hero = () => {
       >
         <h1>Hi, I'm <span className="highlight">Deepu</span></h1>
         <p className="role"><span ref={typedRef} className="typed-text"></span></p>
-        <p className="description">High-level experience in web design and development knowledge, producing quality work.</p>
+        <p className="description">Backend Developer with experience in PHP, Laravel, and API development.
+Skilled in building efficient, scalable, and maintainable web applications.
+Driven by problem-solving and continuous learning.</p>
         <div className="cta-buttons">
           <a href="#contact" className="btn primary">Contact</a>
           <a href="https://drive.google.com/file/d/1wkN1cAZVoyhbN_HcjTk8qPYsmuZ71wTb/view?usp=drive_link"

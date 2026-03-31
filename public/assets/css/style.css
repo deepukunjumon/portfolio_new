@@ -647,7 +647,6 @@ body.dark-mode .social-link:hover {
     padding: 1.5rem 0 2.5rem;
     /* Consistent padding */
     margin-bottom: 0;
-    background-color: var(--section-bg);
 }
 
 .skills-wrapper {
@@ -868,7 +867,7 @@ body.dark-mode .progress-circle {
 /* Projects Section */
 .projects {
     padding: 6rem 5% 4rem;
-    background-color: var(--bg-color);
+    background-color: var(--section-bg);
 }
 
 .projects-header {
@@ -993,8 +992,6 @@ body.dark-mode .progress-circle {
     background: rgba(0, 195, 154, 0.1);
     color: var(--primary-color);
     border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .project-card-title {
@@ -1354,7 +1351,7 @@ body.dark-mode .form-group textarea:focus {
 /* Qualifications Section */
 .qualifications {
     padding: 1.5rem 0 3rem;
-    /* Consistent padding */
+    background-color: var(--section-bg);
     margin-bottom: 0;
 }
 
