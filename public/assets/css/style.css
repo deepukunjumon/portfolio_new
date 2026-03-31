@@ -1285,19 +1285,10 @@ body.dark-mode .info-icon {
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
-    color: #fff;
+    color: var(--primary-color);
     padding: 1.5rem 0;
+    font-size: 0.7rem;
     text-align: center;
-}
-
-.footer-bottom {
-    font-size: 0.9rem;
-}
-
-/* Dark mode footer */
-body.dark-mode footer {
-    background-color: var(--dark-bg);
 }
 
 /* Animations */
