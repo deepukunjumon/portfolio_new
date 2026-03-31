@@ -17,13 +17,13 @@ const projectData = [
     tags: ['Python', 'Machine Learning', 'OpenCV'],
     code: 'https://github.com/deepukunjumon/Real-Time-Traffic-Sign-Recognition-with-Voice-Alert',
   },
-  {
-    title: 'Course Selection System',
-    image: '/assets/img/course-selection-system.webp',
-    desc: 'A comprehensive web platform for students to navigate course prerequisites and manage academic enrollments.',
-    tags: ['PHP', 'MySQL', 'JavaScript'],
-    code: 'https://github.com/deepukunjumon/',
-  },
+  // {
+  //   title: 'Course Selection System',
+  //   image: '/assets/img/course-selection-system.webp',
+  //   desc: 'A comprehensive web platform for students to navigate course prerequisites and manage academic enrollments.',
+  //   tags: ['PHP', 'MySQL', 'JavaScript'],
+  //   code: 'https://github.com/deepukunjumon/',
+  // },
   {
     title: 'Library Management System',
     image: '/assets/img/library-management-system.webp',
