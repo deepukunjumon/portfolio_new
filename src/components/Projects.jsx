@@ -7,7 +7,7 @@ const projectData = [
     image: '/assets/img/cafe.webp',
     desc: 'An end-to-end management solution for commercial bakeshops, featuring real-time inventory tracking and order management.',
     tags: ['Laravel', 'React', 'Material UI'],
-    code: 'https://github.com/deepukunjumon/townbakers',
+    code: 'https://github.com/deepukunjumon/town_bakers',
     demo: 'https://townbakers.vercel.app',
   },
   {
