@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 const skillData = [
   { name: 'PHP', percentage: 82 },
-  { name: 'MySQL', percentage: 79 },
-  { name: 'HTML', percentage: 85 },
-  { name: 'JavaScript', percentage: 79 },
+  { name: 'Slim Framework', percentage: 80 },
   { name: 'Laravel', percentage: 70 },
+  { name: 'API Development', percentage: 83 },
+  { name: 'MySQL', percentage: 79 },
 ];
 
 const Skills = () => {
