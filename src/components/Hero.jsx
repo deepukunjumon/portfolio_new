@@ -57,6 +57,7 @@ const Hero = () => {
         <div className="social-links">
           <a href="https://www.linkedin.com/in/deepu-kunjumon" target="_blank" rel="noreferrer" className="social-link"><i className="fab fa-linkedin-in"></i></a>
           <a href="https://github.com/deepukunjumon" target="_blank" rel="noreferrer" className="social-link"><i className="fab fa-github"></i></a>
+          <a href="mailto:deepukunjumon1@gmail.com" target="_blank" rel="noreferrer" className="social-link"><i className="fab fa-envelope"></i></a>
           <a href="https://wa.me/+918086952858" target="_blank" rel="noreferrer" className="social-link"><i className="fab fa-whatsapp"></i></a>
           <a href="https://www.instagram.com/deepu__kunjumon" target="_blank" rel="noreferrer" className="social-link"><i className="fab fa-instagram"></i></a>
         </div>
