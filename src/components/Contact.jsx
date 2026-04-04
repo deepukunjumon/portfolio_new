@@ -129,7 +129,7 @@ const Contact = () => {
           <form id="contact-form" onSubmit={handleSubmit} noValidate>
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="name">Full Name</label>
+                <label htmlFor="name">Name</label>
                 <input 
                   type="text" 
                   id="name" 
