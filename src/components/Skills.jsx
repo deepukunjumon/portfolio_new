@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const skillData = [
   { name: 'PHP', percentage: 82 },
@@ -44,15 +45,19 @@ const Skills = () => {
               ))}
             </div>
           </div>
-          <motion.div 
-            className="skills-image"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <img src="/assets/img/dev-coding.gif" alt="Skills illustration" loading="lazy" />
-          </motion.div>
+            <motion.div 
+              className="skills-image"
+              initial={{ opacity: 0, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1.7 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <DotLottieReact
+                src="/assets/img/code_dark.json"
+                loop
+                autoplay
+              />
+            </motion.div>
         </div>
       </div>
     </section>
