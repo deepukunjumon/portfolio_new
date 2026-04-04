@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Sun, Moon } from 'lucide-react';
 
 const Navbar = ({ theme, toggleTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,8 +31,8 @@ const Navbar = ({ theme, toggleTheme }) => {
               onChange={toggleTheme} 
             />
             <label htmlFor="theme-toggle">
-              <i className="fas fa-sun"></i>
-              <i className="fas fa-moon"></i>
+              <i className='light-icon'><Sun /></i>
+              <i className='dark-icon'><Moon /></i>
             </label>
           </div>
         </div>

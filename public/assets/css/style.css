@@ -113,11 +113,11 @@ nav ul li a:hover {
     display: none;
 }
 
-.theme-toggle input:checked~label .fa-sun {
+.theme-toggle input:checked~label .light-icon {
     display: none;
 }
 
-.theme-toggle input:checked~label .fa-moon {
+.theme-toggle input:checked~label .dark-icon {
     display: block;
 }
 
@@ -204,15 +204,15 @@ nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
-.theme-toggle .fa-moon {
+.theme-toggle .dark-icon {
     display: none;
 }
 
-.theme-toggle input:checked~label .fa-sun {
+.theme-toggle input:checked~label .light-icon {
     display: none;
 }
 
-.theme-toggle input:checked~label .fa-moon {
+.theme-toggle input:checked~label .dark-icon {
     display: block;
 }
 
@@ -1703,7 +1703,7 @@ html {
 
 @media screen and (max-width: 768px) {
     .hero-content {
-        margin-top: -4.5rem;
+        margin-top: -3.5rem;
         order: 2;
         align-items: center;
     }

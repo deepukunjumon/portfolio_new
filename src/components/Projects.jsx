@@ -42,7 +42,7 @@ const Projects = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2>Featured Projects</h2>
+        <h2>Personal Projects</h2>
       </motion.div>
 
       <div className="projects-grid">
