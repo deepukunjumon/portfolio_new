@@ -1232,6 +1232,73 @@ body.dark-mode .section-subtitle {
     box-shadow: 0 5px 15px rgba(0, 195, 154, 0.3);
 }
 
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 25, 40, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 1.5rem;
+}
+
+.modal-container {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+    padding: 1.8rem 1.5rem;
+    text-align: center;
+}
+
+.modal-success-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 0.9rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: linear-gradient(135deg, #00c39a, #00b38b);
+    box-shadow: 0 10px 24px rgba(0, 195, 154, 0.35);
+    animation: successPop 0.45s ease-out, successPulse 1.8s ease-in-out 0.45s infinite;
+}
+
+.modal-success-icon i {
+    font-size: 1.2rem;
+}
+
+.modal-container h3 {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.7rem;
+}
+
+.modal-container p {
+    color: var(--secondary-text);
+    line-height: 1.6;
+    margin-bottom: 1.4rem;
+}
+
+.modal-close-btn {
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 1.4rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    background: #00b38b;
+}
+
 /* Dark Mode Minimalist */
 body.dark-mode .form-group input,
 body.dark-mode .form-group textarea {
@@ -1240,6 +1307,11 @@ body.dark-mode .form-group textarea {
 
 body.dark-mode .info-icon {
     background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .modal-container {
+    background: #1f1f1f;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
 }
 
 /* Responsive Adjustments */
@@ -1281,6 +1353,37 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes successPop {
+    0% {
+        transform: scale(0.65);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes successPulse {
+    0% {
+        box-shadow: 0 10px 24px rgba(0, 195, 154, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 12px 30px rgba(0, 195, 154, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 10px 24px rgba(0, 195, 154, 0.25);
     }
 }
 
