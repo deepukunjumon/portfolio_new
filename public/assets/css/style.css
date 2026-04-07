@@ -1427,17 +1427,6 @@ body.dark-mode .form-group textarea:focus {
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
 }
 
-.error-message {
-    color: #ff4f4f;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-.form-group input.error,
-.form-group textarea.error {
-    border-color: #ff4f4f;
-}
-
 /* Qualifications Section */
 .qualifications {
     padding: 1.5rem 0 3rem;
@@ -1453,7 +1442,10 @@ body.dark-mode .form-group textarea:focus {
 }
 
 .qualification-button {
+    position: relative;
+    overflow: hidden;
     font-size: 18px;
+    font-family: var(--font-primary);
     font-weight: 500;
     cursor: pointer;
     color: #666;
@@ -1468,6 +1460,23 @@ body.dark-mode .form-group textarea:focus {
 
 .qualification-button:hover {
     color: var(--primary-color);
+}
+
+.qualification-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.qualification-button:hover::after,
+.button-active::after {
+    width: 80%;
 }
 
 .button-active {
@@ -1883,6 +1892,28 @@ section h2::after {
     border-radius: 2px;
 }
 
+/* Section reveal animation */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+}
+
+.reveal-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-section,
+    .reveal-section.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 /* Update specific section heading styles */
 .projects h2,
 .about h2,
@@ -2014,68 +2045,6 @@ body.dark-mode .form-group textarea:focus {
     margin-top: 0.5rem;
 }
 
-/* Qualifications Section Animations */
-.qualification-content {
-    display: none;
-    opacity: 0;
-    transform: translateX(20px);
-    transition: all 0.4s ease-in-out;
-}
-
-.qualification-active {
-    display: block;
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.qualification-data {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s ease-in-out;
-}
-
-.qualification-active .qualification-data {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Add delay for each qualification item */
-.qualification-active .qualification-data:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.qualification-active .qualification-data:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.qualification-active .qualification-data:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
-/* Button hover and active states */
-.qualification-button {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.qualification-button::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.qualification-button:hover::after,
-.button-active::after {
-    width: 80%;
-}
-
 /* Update specific elements that might need different font weights */
 h1,
 h2,
@@ -2100,9 +2069,92 @@ h6 {
     font-weight: 500;
 }
 
-.qualification-button {
-    font-family: var(--font-primary);
-    font-weight: 500;
+/* Qualifications mobile adjustments */
+@media screen and (max-width: 768px) {
+    .qualifications {
+        padding: 1rem 0 2.25rem;
+    }
+
+    .qualification-tabs {
+        gap: 12px;
+        margin-bottom: 28px;
+        flex-wrap: wrap;
+    }
+
+    .qualification-button {
+        font-size: 15px;
+        padding: 8px 12px;
+    }
+
+    .qualification-sections {
+        padding: 0 14px;
+    }
+
+    .qualification-data {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 22px;
+        justify-items: center;
+    }
+
+    .qualification-data .center {
+        grid-column: 1;
+        grid-row: 1;
+        align-items: center;
+    }
+
+    .qualification-data .left,
+    .qualification-data .right {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+    }
+
+    .qualification-data>div:empty {
+        display: none;
+    }
+
+    .qualification-data h3 {
+        font-size: 17px;
+        margin-bottom: 6px;
+    }
+
+    .qualification-subtitle {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .calendar {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .qualification-tabs {
+        gap: 8px;
+    }
+
+    .qualification-button {
+        font-size: 14px;
+        padding: 7px 10px;
+    }
+
+    .qualification-sections {
+        padding: 0 10px;
+    }
+
+    .qualification-data {
+        gap: 7px;
+    }
+
+    .dot {
+        width: 11px;
+        height: 11px;
+    }
+
+    .qualification-data h3 {
+        font-size: 16px;
+    }
 }
 
 /* Projects Section Mobile Adjustments */

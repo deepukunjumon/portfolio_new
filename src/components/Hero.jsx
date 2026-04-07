@@ -1,16 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
   const typedRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   useEffect(() => {
     // Typed.js is loaded globally via CDN in index.html
@@ -37,8 +29,8 @@ const Hero = () => {
     <section id="hero" className="hero">
       <motion.div 
         className="hero-image"
-        initial={isMobile ? { opacity: 0, y: 50 } : { opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, y: 0, x: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
@@ -46,8 +38,8 @@ const Hero = () => {
       </motion.div>
       <motion.div 
         className="hero-content"
-        initial={isMobile ? { opacity: 0, y: 50 } : { opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, y: 0, x: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
