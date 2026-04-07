@@ -891,6 +891,8 @@ body.dark-mode .progress-circle {
     border: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .project-card:hover {
@@ -905,13 +907,19 @@ body.dark-mode .progress-circle {
     height: 200px;
     overflow: hidden;
     background: #f8f9fa;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .project-image-container img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: scale-down;
     transition: transform 0.5s ease;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .project-card:hover .project-image-container img {
@@ -1051,6 +1059,15 @@ body.dark-mode .section-subtitle {
 
     .projects-header h2 {
         font-size: 2rem;
+    }
+
+    .project-card-overlay {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .project-card:hover .project-image-container img {
+        transform: none;
     }
 }
 
