@@ -5,6 +5,7 @@ const Modal = ({
   isOpen,
   title,
   message,
+  icon = null,
   onClose,
   buttonText = 'Close'
 }) => {
@@ -48,9 +49,7 @@ const Modal = ({
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ type: 'spring', stiffness: 300, damping: 24 }}
           >
-            <div className="modal-success-icon" aria-hidden="true">
-              <i className="fas fa-check"></i>
-            </div>
+            {icon}
             <h3 id="modal-title">{title}</h3>
             <p>{message}</p>
             <button type="button" className="modal-close-btn" onClick={onClose}>

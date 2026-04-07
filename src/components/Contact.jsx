@@ -50,7 +50,7 @@ const Contact = () => {
         body: JSON.stringify({
           access_key: '1e065638-c704-40a1-9869-3d36d68c838e',
           subject: 'New Contact Form Submission',
-          from_name: 'Portfolio Website',
+          from_name: 'Deepu Kunjumon | Personal Portfolio',
           ...formData
         })
       });
@@ -137,7 +137,7 @@ const Contact = () => {
                     type="text" 
                     id="name" 
                     name="name" 
-                    placeholder="Deepu Kunjumon"
+                    placeholder=""
                     value={formData.name}
                     onChange={handleChange}
                     className={errors.name ? 'error' : ''}
@@ -145,12 +145,12 @@ const Contact = () => {
                   {errors.name && <div className="error-message">{errors.name}</div>}
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email">Email Address</label>
+                  <label htmlFor="email">Email</label>
                   <input 
                     type="email" 
                     id="email" 
                     name="email" 
-                    placeholder="your@email.com"
+                    placeholder=""
                     value={formData.email}
                     onChange={handleChange}
                     className={errors.email ? 'error' : ''}
@@ -159,11 +159,11 @@ const Contact = () => {
                 </div>
               </div>
               <div className="form-group">
-                <label htmlFor="message">Your message</label>
+                <label htmlFor="message">Message</label>
                 <textarea 
                   id="message" 
                   name="message" 
-                  placeholder="Hi, I'd like to talk about..."
+                  placeholder=""
                   value={formData.message}
                   onChange={handleChange}
                   className={errors.message ? 'error' : ''}
@@ -180,6 +180,17 @@ const Contact = () => {
 
       <Modal
         isOpen={showSuccessModal}
+        icon={(
+          <motion.div
+            className="modal-success-icon"
+            aria-hidden="true"
+            initial={{ scale: 0.65, opacity: 0 }}
+            animate={{ scale: [0.65, 1.08, 1], opacity: 1 }}
+            transition={{ duration: 0.45, ease: 'easeOut' }}
+          >
+            <i className="fas fa-check"></i>
+          </motion.div>
+        )}
         title="Message Sent!"
         message="Thank you for reaching out. Your message has been sent successfully."
         buttonText="Great"
