@@ -16,6 +16,9 @@ function App() {
     if (savedTheme === 'dark-mode') {
       document.body.classList.add('dark-mode');
       setTheme('dark-mode');
+    } else if (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark-mode');
+      setTheme('dark-mode');
     }
   }, []);
 

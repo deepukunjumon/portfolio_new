@@ -45,10 +45,10 @@ const Skills = () => {
               ))}
             </div>
           </div>
-            <motion.div 
+            <motion.div
               className="skills-image"
-              initial={{ opacity: 0, scale: 1 }}
-              whileInView={{ opacity: 1, scale: 1.7 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
