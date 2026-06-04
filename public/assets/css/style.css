@@ -1935,6 +1935,7 @@ section h2::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .reveal-section,
     .reveal-section.is-visible {
         opacity: 1;
@@ -2242,6 +2243,12 @@ h6 {
 
     .projects-scroll {
         padding-left: calc(50% - 115px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-header h2 {
+        font-size: 2rem;
     }
 }
 
