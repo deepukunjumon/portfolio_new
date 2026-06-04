@@ -45,7 +45,7 @@ const Hero = () => {
       >
         <h1>Hi, I'm <span className="highlight">Deepu</span></h1>
         <p className="role"><span ref={typedRef} className="typed-text"></span></p>
-        <p className="description">Backend Developer with experience in PHP, Laravel, and API development.
+        <p className="description">Software Developer with experience in PHP, Laravel, and API development.
           Skilled in building efficient, scalable, and maintainable web applications.
           Driven by problem-solving and continuous learning.
         </p>
