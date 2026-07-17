@@ -3,11 +3,18 @@ import { motion } from 'framer-motion';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const skillData = [
-  { name: 'PHP', percentage: 82 },
-  { name: 'Slim Framework', percentage: 80 },
-  { name: 'Laravel', percentage: 70 },
-  { name: 'API Development', percentage: 83 },
-  { name: 'MySQL', percentage: 79 },
+  {
+    group: 'Backend',
+    skills: ['PHP', 'Laravel', 'Slim Framework', 'REST APIs', 'MySQL'],
+  },
+  {
+    group: 'Frontend',
+    skills: ['JavaScript', 'TypeScript', 'React.js'],
+  },
+  {
+    group: 'Tools',
+    skills: ['Git', 'Postman'],
+  },
 ];
 
 const Skills = () => {
@@ -24,24 +31,22 @@ const Skills = () => {
         <div className="skills-content-wrapper">
           <div className="skills-content">
             <div className="skills-container">
-              {skillData.map((skill, index) => (
-                <div className="skill-item" key={index}>
-                  <div className="skill-info">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.percentage}%</span>
+              {skillData.map((group, index) => (
+                <motion.div
+                  className="skill-group"
+                  key={group.group}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 * index }}
+                >
+                  <h3 className="skill-group-title">{group.group}</h3>
+                  <div className="skill-tags">
+                    {group.skills.map((skill) => (
+                      <span className="skill-tag" key={skill}>{skill}</span>
+                    ))}
                   </div>
-                  <div className="progress-bar">
-                    <motion.div 
-                      className="progress" 
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.percentage}%` }}
-                      viewport={{ once: true, amount: 0.5 }}
-                      transition={{ duration: 1, delay: 0.1 * index }}
-                    >
-                      <div className="progress-circle"></div>
-                    </motion.div>
-                  </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

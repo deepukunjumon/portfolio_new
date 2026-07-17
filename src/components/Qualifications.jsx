@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Qualifications = () => {
-  const [activeTab, setActiveTab] = useState('education');
+  const [activeTab, setActiveTab] = useState('experience');
 
   return (
     <section id="qualifications" className="qualifications">
@@ -15,17 +15,17 @@ const Qualifications = () => {
       </motion.h2>
 
       <div className="qualification-tabs">
-        <div 
-          className={`qualification-button ${activeTab === 'education' ? 'button-active' : ''}`}
-          onClick={() => setActiveTab('education')}
-        >
-          <i className="fas fa-graduation-cap"></i> Education
-        </div>
-        <div 
+        <div
           className={`qualification-button ${activeTab === 'experience' ? 'button-active' : ''}`}
           onClick={() => setActiveTab('experience')}
         >
           <i className="fas fa-briefcase"></i> Experience
+        </div>
+        <div
+          className={`qualification-button ${activeTab === 'education' ? 'button-active' : ''}`}
+          onClick={() => setActiveTab('education')}
+        >
+          <i className="fas fa-graduation-cap"></i> Education
         </div>
       </div>
 

@@ -3,6 +3,14 @@ import { motion } from 'framer-motion';
 
 const projectData = [
   {
+    title: 'Cashlytics',
+    image: '/assets/img/cashlytics.jpg',
+    desc: 'Personal finance tracker built end-to-end: Laravel 12 REST API with Sanctum auth and MySQL on AWS EC2, React 19 + TypeScript frontend with Zustand and shadcn/ui. Deployed on Vercel and Railway.',
+    tags: ['Laravel 12', 'React 19', 'TypeScript', 'MySQL', 'AWS'],
+    code: 'https://github.com/deepukunjumon/cashlytics_backend',
+    demo: 'https://cashlytics.up.railway.app',
+  },
+  {
     title: 'Bakeshop Management System',
     image: '/assets/img/cafe.webp',
     desc: 'An end-to-end management solution for commercial bakeshops, featuring real-time inventory tracking and order management.',

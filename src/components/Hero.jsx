@@ -7,7 +7,7 @@ const Hero = () => {
   useEffect(() => {
     // Typed.js is loaded globally via CDN in index.html
     const options = {
-      strings: ["Backend Developer", "Software Developer"],
+      strings: ["Backend Developer", "Full-Stack Developer", "Software Developer"],
       typeSpeed: 100,
       backSpeed: 60,
       loop: true,
@@ -45,14 +45,13 @@ const Hero = () => {
       >
         <h1>Hi, I'm <span className="highlight">Deepu</span></h1>
         <p className="role"><span ref={typedRef} className="typed-text"></span></p>
-        <p className="description">Software Developer with experience in PHP, Laravel, and API development.
-          Skilled in building efficient, scalable, and maintainable web applications.
-          Driven by problem-solving and continuous learning.
+        <p className="description">Software Developer with 3 years of experience building REST APIs
+          and web applications with PHP (Laravel, Slim), MySQL, and React.js.
         </p>
         <div className="cta-buttons">
           <a href="#contact" className="btn primary">Contact</a>
-          <a href="https://drive.google.com/file/d/1wkN1cAZVoyhbN_HcjTk8qPYsmuZ71wTb/view?usp=drive_link"
-            className="btn secondary" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="/Resume_Deepu_Kunjumon.pdf" download="Resume_Deepu_Kunjumon.pdf"
+            className="btn secondary">Download Resume</a>
         </div>
         <div className="social-links">
           {[

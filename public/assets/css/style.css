@@ -695,6 +695,37 @@ body.dark-mode .social-link:hover {
     gap: 5px;
 }
 
+.skill-group {
+    margin-bottom: 1.6rem;
+}
+
+.skill-group-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    color: var(--text-color);
+}
+
+body.dark-mode .skill-group-title {
+    color: #eee;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.skill-tag {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    background: rgba(0, 195, 154, 0.1);
+    color: var(--primary-color);
+    border: 1px solid rgba(0, 195, 154, 0.25);
+    border-radius: 20px;
+}
+
 .skill-item {
     width: 100%;
     margin-bottom: 20px;
@@ -1564,7 +1595,6 @@ body.dark-mode .form-group textarea:focus {
     font-size: 14px;
     color: #888;
 }
-
 .calendar i {
     margin-right: 5px;
 }
