@@ -4,8 +4,14 @@ import { motion } from 'framer-motion';
 const projectData = [
   {
     title: 'Cashlytics',
-    image: '/assets/img/cashlytics.jpg',
-    desc: 'Personal finance tracker built end-to-end: Laravel 12 REST API with Sanctum auth and MySQL on AWS EC2, React 19 + TypeScript frontend with Zustand and shadcn/ui. Deployed on Vercel and Railway.',
+    featured: true,
+    image: '/assets/img/cashlytics.png',
+    desc: 'Personal finance tracker built end-to-end — a Laravel 12 REST API with a React 19 + TypeScript frontend.',
+    highlights: [
+      'Token auth with Laravel Sanctum, state management with Zustand',
+      'Tailwind + shadcn/ui frontend, MySQL on AWS EC2',
+      'Deployed on Vercel (frontend) and Railway (API)',
+    ],
     tags: ['Laravel 12', 'React 19', 'TypeScript', 'MySQL', 'AWS'],
     code: 'https://github.com/deepukunjumon/cashlytics_backend',
     demo: 'https://cashlytics.up.railway.app',
@@ -25,13 +31,6 @@ const projectData = [
     tags: ['Python', 'Machine Learning', 'OpenCV'],
     code: 'https://github.com/deepukunjumon/Real-Time-Traffic-Sign-Recognition-with-Voice-Alert',
   },
-  // {
-  //   title: 'Course Selection System',
-  //   image: '/assets/img/course-selection-system.webp',
-  //   desc: 'A comprehensive web platform for students to navigate course prerequisites and manage academic enrollments.',
-  //   tags: ['PHP', 'MySQL', 'JavaScript'],
-  //   code: 'https://github.com/deepukunjumon/',
-  // },
   {
     title: 'Library Management System',
     image: '/assets/img/library-management-system.webp',
@@ -41,10 +40,26 @@ const projectData = [
   }
 ];
 
+const ProjectLinks = ({ project }) => (
+  <div className="project-links">
+    {project.demo && (
+      <a href={project.demo} target="_blank" rel="noreferrer" className="project-link primary-link">
+        <i className="fas fa-external-link-alt"></i> Live Demo
+      </a>
+    )}
+    <a href={project.code} target="_blank" rel="noreferrer" className="project-link">
+      <i className="fab fa-github"></i> Source
+    </a>
+  </div>
+);
+
 const Projects = () => {
+  const featured = projectData.filter((project) => project.featured);
+  const others = projectData.filter((project) => !project.featured);
+
   return (
     <section id="projects" className="projects">
-      <motion.div 
+      <motion.div
         className="projects-header"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -53,11 +68,49 @@ const Projects = () => {
         <h2>Personal Projects</h2>
       </motion.div>
 
+      {featured.map((project) => (
+        <motion.div
+          className="project-featured"
+          key={project.title}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="featured-image">
+            <img src={project.image} alt={project.title} loading="lazy" />
+          </div>
+          <div className="featured-content">
+            <div className="featured-meta">
+              <span className="featured-badge">Featured</span>
+              {project.demo && (
+                <span className="live-badge"><span className="live-dot"></span>Live</span>
+              )}
+            </div>
+            <h3 className="project-card-title">{project.title}</h3>
+            <p className="project-card-desc">{project.desc}</p>
+            {project.highlights && (
+              <ul className="project-highlights">
+                {project.highlights.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            )}
+            <div className="project-tags">
+              {project.tags.map((tag) => (
+                <span key={tag} className="tag">{tag}</span>
+              ))}
+            </div>
+            <ProjectLinks project={project} />
+          </div>
+        </motion.div>
+      ))}
+
       <div className="projects-grid">
-        {projectData.map((project, idx) => (
-          <motion.div 
-            className="project-card" 
-            key={idx}
+        {others.map((project, idx) => (
+          <motion.div
+            className="project-card"
+            key={project.title}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -65,26 +118,21 @@ const Projects = () => {
           >
             <div className="project-image-container">
               <img src={project.image} alt={project.title} loading="lazy" />
-              <div className="project-card-overlay">
-                <a href={project.code} target="_blank" rel="noreferrer" className="overlay-link"><i className="fab fa-github"></i> Source</a>
-                {project.demo && (
-                  <a href={project.demo} target="_blank" rel="noreferrer" className="overlay-link"><i className="fas fa-external-link-alt"></i> Demo</a>
-                )}
-              </div>
+              {project.demo && (
+                <span className="live-badge image-badge"><span className="live-dot"></span>Live</span>
+              )}
             </div>
-            
+
             <div className="project-card-content">
               <div className="project-tags">
-                {project.tags.map((tag, i) => (
-                  <span key={i} className="tag">{tag}</span>
+                {project.tags.map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
                 ))}
               </div>
               <h3 className="project-card-title">{project.title}</h3>
               <p className="project-card-desc">{project.desc}</p>
               <div className="project-card-footer">
-                <a href={project.code} target="_blank" rel="noreferrer" className="project-cta">
-                  Explore Project <i className="fas fa-arrow-right"></i>
-                </a>
+                <ProjectLinks project={project} />
               </div>
             </div>
           </motion.div>
