@@ -51,7 +51,7 @@ const Hero = () => {
         <div className="cta-buttons">
           <a href="#contact" className="btn primary">Contact</a>
           <a href="/Resume_Deepu_Kunjumon.pdf" download="Resume_Deepu_Kunjumon.pdf"
-            className="btn secondary">Download Resume</a>
+            className="btn secondary">Resume</a>
         </div>
         <div className="social-links">
           {[
